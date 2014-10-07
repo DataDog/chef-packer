@@ -1,7 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
-gem 'stove'
-gem 'thor-foodcritic'
-gem 'test-kitchen', '~> 1.0.0.alpha', :group => :integration
-gem 'kitchen-vagrant', :group => :integration
+gem 'berkshelf', '~> 3.1'
+gem 'chefspec', '~> 4.0'
+gem 'foodcritic', '~> 4.0.0'
+gem 'rake', '>= 10.2'
+gem 'rubocop', '= 0.24.1'
+
+group :integration do
+  gem 'guard', '>= 2.6'
+  gem 'guard-foodcritic', '~> 1.0.3'
+  gem 'guard-kitchen'
+  gem 'guard-rspec'
+  gem 'growl' # Also brew cask install growlnotify
+  gem 'guard-rubocop', '>= 1.1'
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+end
